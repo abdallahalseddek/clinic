@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.Duration;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -19,6 +21,8 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "appointment_Id")
     private Integer appointmentId;
+    private Date date;
+    private Duration duration;
     private String reason;
     private Status status = Status.Scheduled;
     private String address;
