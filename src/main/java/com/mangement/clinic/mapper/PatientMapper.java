@@ -10,5 +10,5 @@ import org.springframework.stereotype.Component;
 public interface PatientMapper {
     PatientDTO mapToDTO(Patient patientEntity);
 
-    Patient mapToEntity(PatientDTO patientDTO);
+   // Patient mapToEntity(PatientDTO patientDTO);
 }

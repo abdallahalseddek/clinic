@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "clinic_admin")
 @Getter
@@ -19,4 +21,5 @@ public class ClinicAdmin {
     private Integer adminId;
     private String username;
     private String password;
+    private Date createdAt;
 }
