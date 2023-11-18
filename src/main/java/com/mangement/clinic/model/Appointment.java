@@ -32,6 +32,6 @@ public class Appointment {
             inverseJoinColumns = @JoinColumn(name = "appointment_Id"))
     private List<Patient> patients;
     @ManyToOne
-    @JoinColumn(name = "admin_id",referencedColumnName = "admin_id")
+    @JoinColumn(name = "admin_id", referencedColumnName = "admin_id")
     private ClinicAdmin admin;
 }
