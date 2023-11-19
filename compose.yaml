@@ -3,3 +3,11 @@ services:
   clinic-app:
     container_name: clinic-management-system
     build: .
+    ports:
+      - "8080:8080"
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
