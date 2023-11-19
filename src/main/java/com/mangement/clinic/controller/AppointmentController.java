@@ -5,6 +5,7 @@ import com.mangement.clinic.exeption.AppointmentException;
 import com.mangement.clinic.model.Appointment;
 import com.mangement.clinic.model.Status;
 import com.mangement.clinic.service.serviceImplementation.AppointmentServiceImpl;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/appointment")
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class AppointmentController {
     private final AppointmentServiceImpl service;
     @PostMapping("/create")

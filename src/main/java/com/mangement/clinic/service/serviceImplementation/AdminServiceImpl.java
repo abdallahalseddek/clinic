@@ -7,16 +7,20 @@ import com.mangement.clinic.model.ClinicAdmin;
 import com.mangement.clinic.repository.AdminRepository;
 import com.mangement.clinic.service.AdminService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
     private final AdminRepository repository;
     private final AdminMapper mapper;
-
+    @Autowired
+    public AdminServiceImpl(AdminRepository repository, AdminMapper mapper) {
+        this.repository = repository;
+        this.mapper = mapper;
+    }
 
     @Override
     public AdminDTO createNewAdminUser(ClinicAdmin newAdmin) {

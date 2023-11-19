@@ -3,7 +3,7 @@ package com.mangement.clinic.controller;
 import com.mangement.clinic.dto.AdminDTO;
 import com.mangement.clinic.model.ClinicAdmin;
 import com.mangement.clinic.service.serviceImplementation.AdminServiceImpl;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/admin")
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class AdminController {
     private final AdminServiceImpl service;
 
