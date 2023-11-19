@@ -1,0 +1,5 @@
+version: "3"
+services:
+  clinic-app:
+    container_name: clinic-management-system
+    build: .
