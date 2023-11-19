@@ -7,13 +7,14 @@ import com.mangement.clinic.model.Patient;
 import com.mangement.clinic.repository.PatientRepository;
 import com.mangement.clinic.service.PatientService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class PatientServiceImpl implements PatientService {
     private final PatientRepository repository;
+    @Qualifier("patientMapper")
     private final PatientMapper mapper;
 
     @Override

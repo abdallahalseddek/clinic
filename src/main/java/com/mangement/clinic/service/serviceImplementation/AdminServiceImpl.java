@@ -7,7 +7,7 @@ import com.mangement.clinic.model.ClinicAdmin;
 import com.mangement.clinic.repository.AdminRepository;
 import com.mangement.clinic.service.AdminService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
     private final AdminRepository repository;
+    @Qualifier("adminMapper")
     private final AdminMapper mapper;
 
     @Override

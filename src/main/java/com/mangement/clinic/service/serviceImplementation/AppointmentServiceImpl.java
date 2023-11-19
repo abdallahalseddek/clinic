@@ -8,7 +8,7 @@ import com.mangement.clinic.model.Status;
 import com.mangement.clinic.repository.AppointmentRepository;
 import com.mangement.clinic.service.AppointmentService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -20,6 +20,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 
     private final AppointmentRepository repository;
 
+    @Qualifier("appointmentMapper")
     private final AppointmentMapper mapper;
 
     @Override
