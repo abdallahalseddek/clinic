@@ -5,7 +5,8 @@ import com.mangement.clinic.model.Patient;
 import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 
-@Mapper
+@Mapper(componentModel = "spring")
+@Component
 public interface PatientMapper {
     PatientDTO mapToDTO(Patient patientEntity);
 

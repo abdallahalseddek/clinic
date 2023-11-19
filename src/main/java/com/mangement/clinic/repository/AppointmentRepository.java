@@ -13,5 +13,5 @@ import java.util.List;
 public interface AppointmentRepository extends JpaRepository<Appointment, Integer> {
     List<Appointment> findByDate(Date date);
    // @Query("select a.date, p.firstName from Appointment a join Patient p on p.patientId=a.appointmentId group by a.date limit 5")
-    List<Appointment> findAppointmentsByPatient(String patientName);
+   // List<Appointment> findAppointmentsByPatients(String patientName);
 }

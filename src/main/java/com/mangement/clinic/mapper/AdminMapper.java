@@ -5,7 +5,8 @@ import com.mangement.clinic.model.ClinicAdmin;
 import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 
-@Mapper
+@Mapper(componentModel = "spring")
+@Component
 public interface AdminMapper {
     AdminDTO mapToDTO(ClinicAdmin adminEntity);
 

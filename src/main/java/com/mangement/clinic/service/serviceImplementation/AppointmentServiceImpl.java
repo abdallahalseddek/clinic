@@ -58,8 +58,9 @@ public class AppointmentServiceImpl implements AppointmentService {
 
     @Override
     public List<AppointmentDTO> PatientAppointmentsHistory(String patientName) {
-        List<Appointment> appointments = repository.findAppointmentsByPatient(patientName);
+        /*List<Appointment> appointments = repository.findAppointmentsByPatients(patientName);
         return appointments.stream()
-                .map(mapper::mapToDTO).toList();
+                .map(mapper::mapToDTO).toList();*/
+        return null;
     }
 }

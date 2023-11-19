@@ -1,12 +1,10 @@
 package com.mangement.clinic.controller;
 
 import com.mangement.clinic.dto.AppointmentDTO;
-import com.mangement.clinic.exeption.AppointmentException;
 import com.mangement.clinic.model.Appointment;
 import com.mangement.clinic.model.Status;
 import com.mangement.clinic.service.serviceImplementation.AppointmentServiceImpl;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +13,15 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/appointment")
-@AllArgsConstructor
+@RequestMapping("api/v1/appointment")
+
 public class AppointmentController {
     private final AppointmentServiceImpl service;
+
+    @Autowired public AppointmentController(AppointmentServiceImpl service) {
+        this.service = service;
+    }
+
     @PostMapping("/create")
     public ResponseEntity<AppointmentDTO> createNewAppointment(Appointment newAppointment) {
         return new ResponseEntity<>(service.createNewAppointment(newAppointment), HttpStatus.CREATED);
