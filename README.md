@@ -5,6 +5,7 @@ This system is developed using Spring boot framework
 TODO :
 1. spring cloud
 2. GraphQL
+3. unit test **Junit**
 ---
 The schema design for the project is :
 <p align="center">

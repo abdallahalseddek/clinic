@@ -3,6 +3,7 @@ package com.mangement.clinic.controller;
 import com.mangement.clinic.dto.AdminDTO;
 import com.mangement.clinic.model.ClinicAdmin;
 import com.mangement.clinic.service.serviceImplementation.AdminServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,9 +13,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/admin")
+@RequiredArgsConstructor
 public class AdminController {
-    @Autowired
-    private AdminServiceImpl service;
+
+    private final AdminServiceImpl service;
 
 
     @PostMapping("/create")

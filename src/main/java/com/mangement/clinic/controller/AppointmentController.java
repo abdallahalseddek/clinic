@@ -4,7 +4,7 @@ import com.mangement.clinic.dto.AppointmentDTO;
 import com.mangement.clinic.model.Appointment;
 import com.mangement.clinic.model.Status;
 import com.mangement.clinic.service.serviceImplementation.AppointmentServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +14,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/appointment")
+@RequiredArgsConstructor
 public class AppointmentController {
-    @Autowired
-    private AppointmentServiceImpl service;
+
+    private final AppointmentServiceImpl service;
 
     @PostMapping("/create")
     public ResponseEntity<AppointmentDTO> createNewAppointment(Appointment newAppointment) {

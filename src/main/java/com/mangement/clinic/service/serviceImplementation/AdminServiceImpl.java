@@ -15,10 +15,8 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
-    @Autowired
-    private AdminRepository repository;
-    @Autowired
-    private AdminMapper mapper;
+    private final AdminRepository repository;
+    private final AdminMapper mapper;
 
     @Override
     public AdminDTO createNewAdminUser(ClinicAdmin newAdmin) {

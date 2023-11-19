@@ -7,6 +7,7 @@ import com.mangement.clinic.model.Appointment;
 import com.mangement.clinic.model.Status;
 import com.mangement.clinic.repository.AppointmentRepository;
 import com.mangement.clinic.service.AppointmentService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +15,12 @@ import java.util.Date;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class AppointmentServiceImpl implements AppointmentService {
-    @Autowired
-    private AppointmentRepository repository;
-    @Autowired
-    private AppointmentMapper mapper;
+
+    private final AppointmentRepository repository;
+
+    private final AppointmentMapper mapper;
 
     @Override
     public AppointmentDTO createNewAppointment(Appointment newAppointment) {
