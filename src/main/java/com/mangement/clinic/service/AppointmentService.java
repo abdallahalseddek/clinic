@@ -11,7 +11,7 @@ import java.util.List;
 public interface AppointmentService {
     AppointmentDTO createNewAppointment(Appointment newAppointment);
 
-    AppointmentDTO updateAppointmentStatus(Appointment appointment,Status newstatus);
+    AppointmentDTO updateAppointmentStatus(Appointment appointment, Status newstatus);
 
     List<AppointmentDTO> listTodayAppointments();
 

@@ -14,13 +14,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/appointment")
-
 public class AppointmentController {
-    private final AppointmentServiceImpl service;
-
-    @Autowired public AppointmentController(AppointmentServiceImpl service) {
-        this.service = service;
-    }
+    @Autowired
+    private AppointmentServiceImpl service;
 
     @PostMapping("/create")
     public ResponseEntity<AppointmentDTO> createNewAppointment(Appointment newAppointment) {
@@ -28,8 +24,8 @@ public class AppointmentController {
     }
 
     @PutMapping("/update")
-    public  ResponseEntity<AppointmentDTO> updateAppointmentStatus(Appointment appointment, Status newstatus) {
-        return new ResponseEntity<>(service.updateAppointmentStatus(appointment,newstatus), HttpStatus.ACCEPTED);
+    public ResponseEntity<AppointmentDTO> updateAppointmentStatus(Appointment appointment, Status newstatus) {
+        return new ResponseEntity<>(service.updateAppointmentStatus(appointment, newstatus), HttpStatus.ACCEPTED);
     }
 
     @GetMapping("/today")

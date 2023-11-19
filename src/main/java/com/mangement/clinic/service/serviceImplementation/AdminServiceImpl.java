@@ -13,14 +13,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
-    private final AdminRepository repository;
-    private final AdminMapper mapper;
     @Autowired
-    public AdminServiceImpl(AdminRepository repository, AdminMapper mapper) {
-        this.repository = repository;
-        this.mapper = mapper;
-    }
+    private AdminRepository repository;
+    @Autowired
+    private AdminMapper mapper;
 
     @Override
     public AdminDTO createNewAdminUser(ClinicAdmin newAdmin) {

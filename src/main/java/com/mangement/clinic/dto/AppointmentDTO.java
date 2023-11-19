@@ -10,7 +10,7 @@ public class AppointmentDTO {
     private Date date;
     private Duration duration;
     private String reason;
-    private Status status ;
+    private Status status;
     private String address;
     private String contactInfo;
     private String patientName;

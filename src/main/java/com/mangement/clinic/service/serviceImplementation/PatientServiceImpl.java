@@ -6,19 +6,16 @@ import com.mangement.clinic.mapper.PatientMapper;
 import com.mangement.clinic.model.Patient;
 import com.mangement.clinic.repository.PatientRepository;
 import com.mangement.clinic.service.PatientService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+
 public class PatientServiceImpl implements PatientService {
-    private final PatientRepository repository;
-    private final PatientMapper mapper;
     @Autowired
-    public PatientServiceImpl(PatientRepository repository, PatientMapper mapper) {
-        this.repository = repository;
-        this.mapper = mapper;
-    }
+    private PatientRepository repository;
+    @Autowired
+    private PatientMapper mapper;
 
     @Override
     public PatientDTO newPatient(Patient newPatient) {

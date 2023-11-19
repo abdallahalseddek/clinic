@@ -12,13 +12,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/admin")
-
 public class AdminController {
-    private final AdminServiceImpl service;
+    @Autowired
+    private AdminServiceImpl service;
 
-    @Autowired public AdminController(AdminServiceImpl service) {
-        this.service = service;
-    }
 
     @PostMapping("/create")
     public ResponseEntity<AdminDTO> createNewAdminUser(@RequestBody ClinicAdmin newAdmin) {

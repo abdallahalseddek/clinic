@@ -4,22 +4,16 @@ package com.mangement.clinic.controller;
 import com.mangement.clinic.dto.PatientDTO;
 import com.mangement.clinic.model.Patient;
 import com.mangement.clinic.service.serviceImplementation.PatientServiceImpl;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/patient")
-
+@RequestMapping("api/v1/patient")
 public class PatientController {
-    private final PatientServiceImpl service;
     @Autowired
-    public PatientController(PatientServiceImpl service) {
-        this.service = service;
-    }
+    private PatientServiceImpl service;
 
     @PostMapping("/create")
     public ResponseEntity<PatientDTO> newPatient(@RequestBody Patient newPatient) {

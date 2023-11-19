@@ -7,26 +7,18 @@ import com.mangement.clinic.model.Appointment;
 import com.mangement.clinic.model.Status;
 import com.mangement.clinic.repository.AppointmentRepository;
 import com.mangement.clinic.service.AppointmentService;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 @Service
-
 public class AppointmentServiceImpl implements AppointmentService {
-    private final AppointmentRepository repository;
-    private final AppointmentMapper mapper;
-
     @Autowired
-    public AppointmentServiceImpl(AppointmentRepository repository, AppointmentMapper mapper) {
-        this.repository = repository;
-        this.mapper = mapper;
-    }
+    private AppointmentRepository repository;
+    @Autowired
+    private AppointmentMapper mapper;
 
     @Override
     public AppointmentDTO createNewAppointment(Appointment newAppointment) {
@@ -34,7 +26,7 @@ public class AppointmentServiceImpl implements AppointmentService {
     }
 
     @Override
-    public AppointmentDTO updateAppointmentStatus(Appointment appointment,Status newstatus) {
+    public AppointmentDTO updateAppointmentStatus(Appointment appointment, Status newstatus) {
         Appointment updatedappointment = repository.findById(appointment.getAppointmentId())
                 .orElseThrow(() -> new AppointmentException("Not Exists"));
         updatedappointment.setStatus(newstatus);
